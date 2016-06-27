@@ -7,7 +7,7 @@ var urlencodedParser = bodyParser.urlencoded({extended: false});
 var pg = require('pg');
 var connectionString = 'postgres://localhost:5432/DBNAME';///- change with database name
 var mongoose = require('mongoose');
-mongoose.connect('localhost:27017/DB');
+mongoose.connect('localhost:27017/animals');
 var animalSchema = new mongoose.Schema({
   name: String,
   animal: String,

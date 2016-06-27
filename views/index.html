@@ -8,17 +8,19 @@
     <script src="/scripts/script.js" charset="utf-8"></script>
     <link rel="stylesheet" href="/vendors/bootstrap.min.css" media="screen" title="no title" charset="utf-8">
   </head>
-  <body ng-controller="BATMAN">
+  <body ng-controller="BATMAN" class="bg-success">
 
-  <div ng-init="tab=1">
+  <div class="navbar navbar-inverse" ng-init="tab=1">
     <div class="btn btn-info" ng-click="tab = 1">Home</div>
     <div class="btn btn-info" ng-click="tab = 2">Add Animal</div>
     <div class="btn btn-info" ng-click="tab = 3">Animals!</div>
-
+</div>
+<div class="bg-success">
       <div ng-show="tab ==1">
-        <p>
-          Home!
-        </p>
+        <h3>
+          Birds for Days!
+        </h3>
+        <img class="img-rounded"src="http://25.media.tumblr.com/tumblr_m9pddnCSpi1r7eh38o1_500.jpg" alt="" />
       </div>
       <div ng-show="tab ==2">
         <p>
@@ -37,12 +39,19 @@
           Animals:
         </p>
         <button ng-click="getAnimals()" type="text" name="button"class="btn btn-primary">Show Animals!</button>
-        <ul ng-repeat="animal in allTheAnimals">
-          <li> Name: {{animal.name}}</li>
-          <li> Animal: {{animal.animal}}</li>
-          <li> age: {{animal.age}}</li>
-          <li> <img src="{{animal.image}}" alt="{{animal.name}}" /></li>
-        </ul>
+        <div class="container" ng-repeat="animal in allTheAnimals" >
+          <div class="row">
+
+
+          <div class="col-md-4">
+          <p> Name: {{animal.name}}</p>
+          <p> Animal: {{animal.animal}}</p>
+
+          <p> age: {{animal.age}}</p>
+          <p> <img class="img-thumbnail" width="150" height="150" ng-src="{{animal.image}}" alt="{{animal.name}}" /></p>
+        </div>
+      </div>
+      </div>
       </div>
 
 
