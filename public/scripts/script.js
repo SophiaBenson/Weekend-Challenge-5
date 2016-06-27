@@ -7,6 +7,9 @@ var myApp = angular.module("myApp", []);
 myApp.controller("BATMAN", ["$scope", "$http", function($scope, $http){
   $scope.addAnimal= function () {
     event.preventDefault();
+    $scope.addAnimal=function () {
+
+
     var animalToSend ={
       name: $scope.nameIn,
       animal: $scope.animalIn,
@@ -23,7 +26,10 @@ myApp.controller("BATMAN", ["$scope", "$http", function($scope, $http){
     $scope.animalIn = '';
     $scope.ageIn = '';
     $scope.imageIn = '';
-  };//end addAnimal
+  };
+};//end addAnimal
+$scope.getAnimals = function () {
+
 
   $http({
     method:'GET',
@@ -31,6 +37,7 @@ myApp.controller("BATMAN", ["$scope", "$http", function($scope, $http){
   }).then(function(response){
     $scope.allTheAnimals = response.data;
     console.log($scope.allTheAnimals);
-  });//end getAnimals
+  });
+};//end getAnimals
 
 }]);///end batman controller

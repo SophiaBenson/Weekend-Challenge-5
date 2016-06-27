@@ -2,6 +2,7 @@ var express = require('express');
 var app = express();
 var path = require('path');
 var bodyParser = require('body-parser');
+app.use(bodyParser.json());
 var urlencodedParser = bodyParser.urlencoded({extended: false});
 var pg = require('pg');
 var connectionString = 'postgres://localhost:5432/DBNAME';///- change with database name

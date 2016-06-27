@@ -26,9 +26,9 @@
         </p>
         <ul>
           <input type="text" ng-model="nameIn" placeholder="Name"name="name" value="">
-          <input type="text" ng-model="animalIn" placeholder="Type of Animal"name="name" value="">
-          <input type="text" ng-model="ageIn" placeholder="Age of Animal"name="name" value="">
-          <input type="text" ng-model="imageIn" placeholder="Image URL"name="name" value="">
+          <input type="text" ng-model="animalIn" placeholder="Type of Animal"name="animal" value="">
+          <input type="text" ng-model="ageIn" placeholder="Age of Animal"name="age" value="">
+          <input type="text" ng-model="imageIn" placeholder="Image URL"name="image" value="">
           <button ng-click="addAnimal()">Add Animal!</button>
         </ul>
       </div>
@@ -36,20 +36,18 @@
         <p>
           Animals:
         </p>
+        <button ng-click="getAnimals()" type="text" name="button"class="btn btn-primary">Show Animals!</button>
         <ul ng-repeat="animal in allTheAnimals">
           <li> Name: {{animal.name}}</li>
           <li> Animal: {{animal.animal}}</li>
           <li> age: {{animal.age}}</li>
-          <li> Image: {{animal.image}}</li>
+          <li> <img src="{{animal.image}}" alt="{{animal.name}}" /></li>
         </ul>
       </div>
 
 
 
     </div>
-<input type="text" ng-model="chirp" name="name" value="">
-<p>
-  {{chirp}}
-</p>
+
   </body>
 </html>
