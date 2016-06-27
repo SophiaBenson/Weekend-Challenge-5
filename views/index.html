@@ -8,8 +8,45 @@
     <script src="/scripts/script.js" charset="utf-8"></script>
     <link rel="stylesheet" href="/vendors/bootstrap.min.css" media="screen" title="no title" charset="utf-8">
   </head>
-  <body>
-    index here
+  <body ng-controller="BATMAN">
+
+  <div ng-init="tab=1">
+    <div class="btn btn-info" ng-click="tab = 1">Home</div>
+    <div class="btn btn-info" ng-click="tab = 2">Add Animal</div>
+    <div class="btn btn-info" ng-click="tab = 3">Animals!</div>
+
+      <div ng-show="tab ==1">
+        <p>
+          Home!
+        </p>
+      </div>
+      <div ng-show="tab ==2">
+        <p>
+          Add an Animal
+        </p>
+        <ul>
+          <input type="text" ng-model="nameIn" placeholder="Name"name="name" value="">
+          <input type="text" ng-model="animalIn" placeholder="Type of Animal"name="name" value="">
+          <input type="text" ng-model="ageIn" placeholder="Age of Animal"name="name" value="">
+          <input type="text" ng-model="imageIn" placeholder="Image URL"name="name" value="">
+          <button ng-click="addAnimal()">Add Animal!</button>
+        </ul>
+      </div>
+      <div ng-show="tab ==3">
+        <p>
+          Animals:
+        </p>
+        <ul ng-repeat="animal in allTheAnimals">
+          <li> Name: {{animal.name}}</li>
+          <li> Animal: {{animal.animal}}</li>
+          <li> age: {{animal.age}}</li>
+          <li> Image: {{animal.image}}</li>
+        </ul>
+      </div>
+
+
+
+    </div>
 <input type="text" ng-model="chirp" name="name" value="">
 <p>
   {{chirp}}
